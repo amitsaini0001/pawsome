@@ -72,6 +72,29 @@ export function seedDatabase(firebase) {
         type: "video",
       });
 
+        // eslint-disable-next-line prefer-const
+  firebase
+  .firestore()
+  .collection("posts")
+  .add({
+    photoId: 54,
+    userId: "jUeUXoMVtOYftWip8v7HMPXlJ1A2",
+    imageSrc: `/images/users/test.mp4`,
+    caption: "Its a beautfiul day",
+    likes: [],
+    comments: [
+      {
+        displayName: "dali",
+        comment: "Interesting !",
+      },
+    ],
+    userLatitude: "40.7128°",
+    userLongitude: "74.0060°",
+    dateCreated: Date.now(),
+    petName: "tomTom",
+    type: "video",
+  });
+
   // eslint-disable-next-line prefer-const
   for (let i = 1; i <= 5; ++i) {
     firebase
