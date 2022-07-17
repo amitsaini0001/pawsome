@@ -5,7 +5,11 @@ import PropTypes from "prop-types";
 export default function AddPost() {
   return (
     <div className="flex h-auto w-100 align-center justify-center fixed bottom-0 left-0 right-0">
-      <div className="w-20 h-10 p-2 m-2 rounded flex items-center justify-center" style={{backgroundColor:"black"}}>
+      
+      <div className="w-30 h-10 p-2 m-2 rounded flex items-center justify-center" style={{backgroundColor:"black"}}>
+      <p className="pr-2" style={{color:"white"}}>
+        Add a post
+      </p>
         <svg
         className="w-7 h-7 p-1"
           version="1.1"
