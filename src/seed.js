@@ -7,7 +7,7 @@ export function seedDatabase(firebase) {
       username: "amit",
       fullName: "Amit Saini",
       emailAddress: "amit@gmail.com",
-      following: ["2"],
+      following: [],
       followers: ["2", "3", "4"],
       dateCreated: Date.now(),
       pets:["chikiCat", "tomTom"]
@@ -101,19 +101,40 @@ export function seedDatabase(firebase) {
       .firestore()
       .collection("posts")
       .add({
-        photoId: i,
-        userId: "2",
-        imageSrc: `/images/users/raphael/${i}.jpg`,
+        photoId: `${i+88}`,
+        userId: "3",
+        imageSrc: `/images/pets/Video/${i}.mp4`,
         caption: "Saint George and the Dragon",
         likes: [],
         comments: [
           {
-            displayName: "dali",
-            comment: "Love this place, looks like my animal farm!",
+            displayName: "amit",
+            comment: "this is cool !",
           },
+        ],
+        userLatitude: "40.7128°",
+        userLongitude: "74.0060°",
+        dateCreated: Date.now(),
+        petName: "tomTom",
+        type: "video",
+      });
+  }
+
+  // eslint-disable-next-line prefer-const
+  for (let i = 1; i <= 7; ++i) {
+    firebase
+      .firestore()
+      .collection("posts")
+      .add({
+        photoId: i,
+        userId: "2",
+        imageSrc: `/images/pets/Images/${i}.png`,
+        caption: "Image",
+        likes: [],
+        comments: [
           {
-            displayName: "orwell",
-            comment: "Would you mind if I used this picture?",
+            displayName: "dali",
+            comment: "Love this photo !",
           },
         ],
         userLatitude: "40.7128°",
@@ -121,6 +142,31 @@ export function seedDatabase(firebase) {
         dateCreated: Date.now(),
         petName:"chikiCat",
         type: "image",
+      });
+  }
+
+  // eslint-disable-next-line prefer-const
+  for (let i = 8; i <= 12; ++i) {
+    firebase
+      .firestore()
+      .collection("posts")
+      .add({
+        photoId: i+99,
+        userId: "2",
+        imageSrc: `/images/pets/Video/${i}.mp4`,
+        caption: "Image",
+        likes: [],
+        comments: [
+          {
+            displayName: "raphael",
+            comment: "rocking the video !",
+          },
+        ],
+        userLatitude: "40.7128°",
+        userLongitude: "74.0060°",
+        dateCreated: Date.now(),
+        petName:"chikiCat",
+        type: "video",
       });
   }
 
@@ -151,5 +197,18 @@ export function seedDatabase(firebase) {
     subType: "Ragdool",
     type: "cat",
     sex: "female"
+  });
+
+  firebase.firestore().collection("pets").add({
+    age: 2,
+    avatar:
+      "https://www.thesprucepets.com/thmb/cr0IUzzdcuqOYdGMBbRbbi6NfkY=/1568x1176/smart/filters:no_upscale()/GettyImages-145577979-d97e955b5d8043fd96747447451f78b7.jpg",
+    isAdoptable: false,
+    name: "Duckie",
+    ownerUsername: "amit",
+    petName: "Duckkkz",
+    subType: "Duck",
+    type: "Duck",
+    sex: "male"
   });
 }

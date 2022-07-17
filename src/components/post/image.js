@@ -6,7 +6,7 @@ export default function Image({ src, caption, type }) {
   }
   if (type === "video") {
     return (
-      <video autoPlay alt="video here" loop>
+      <video className="w-full" muted autoPlay alt="video here" loop>
         <source src={src} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
